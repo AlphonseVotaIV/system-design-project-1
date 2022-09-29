@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "I'm going insane please help me"
+title:  "Finally finished"
 date:   2022-09-28 19:45:35 -0400
 categories: jekyll update
 ---
