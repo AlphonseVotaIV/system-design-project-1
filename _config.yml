@@ -24,6 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Hi! My name is Alphonse Vota, and I'm a Cybersecurity major here at Marist! I'm hoping to get an internship this coming winter break in my field. In my downtime, I'm an avid video game player, with my favorite games being Deep Rock Galactic, ULTRAKILL, and Terraria.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
+markdown: kramdown
 twitter_username: AlphonseVota
 github_username:  AlphonseVotaIV
 
