@@ -56,10 +56,17 @@ body {
 	font-size: 12pt;
 	line-height: 1.35em;
 	/*also written as...  font: normal normal 400 100%/1.5em;*/
+	background-image: url("../Images/red.jpg");
 	font-family: Avenir,Verdana,sans-serif;
 	/*margin-top: 1em;
 	margin-left: 1em;*/
 }
+
+.texture-red { background-image: url("../Images/red.jpg"); }
+
+.texture-red .post-date, .texture-purple .post-date { color: #ddd; }
+
+.texture-red h2, .texture-purple h2 { color: #ccc; }
 
 p {
 	position: relative;
