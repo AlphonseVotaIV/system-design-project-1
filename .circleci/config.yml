@@ -36,7 +36,7 @@ jobs:
        - run:
             name: Deploy Over SSH
             command: |
-              scp -v -r -i ~/var/www/mysite.com/_site circleci@148.100.77.208:"/var/www/mysite.com/html"
+              scp -r /system-design-project-1/ circleci@148.100.77.208:"/var/www/mysite.com/"
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
