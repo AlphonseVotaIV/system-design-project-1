@@ -17,13 +17,11 @@ jobs:
       - run: ruby --version
       - run: bundle install
       - run: bundle exec jekyll serve
-      - run: mkdir -p workspace
-      - run: echo "Hello, world" > workspace/echo-output
 
       - persist_to_workspace:
-          root: workspace
+          root: ./
           paths:
-            - echo-output 
+            - _site
 
   deploy:
     machine:
@@ -31,14 +29,14 @@ jobs:
     resource_class: medium
     steps:
        - attach_workspace: 
-          at: workspace
+          at: ./_site
        - add_ssh_keys:
           fingerprints:
             - "e5:63:5b:8f:3b:8d:bb:d1:70:7d:9f:2b:04:14:c5:10"
        - run:
             name: Deploy Over SSH
             command: |
-              # scp -r circleci@148.100.77.208:"/var/www/mysite.com/" ~/var/www/mysite.com/_site/
+              scp -r circleci@148.100.77.208:"/var/www/mysite.com/" ~/var/www/mysite.com/_site/
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
