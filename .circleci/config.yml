@@ -28,6 +28,7 @@ jobs:
     steps:
        - attach_workspace: 
           at: ./
+       - run: ls -lah
        - add_ssh_keys:
           fingerprints:
             - "e5:63:5b:8f:3b:8d:bb:d1:70:7d:9f:2b:04:14:c5:10"
