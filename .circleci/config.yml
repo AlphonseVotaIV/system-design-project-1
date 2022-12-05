@@ -17,11 +17,13 @@ jobs:
       - run: ruby --version
       - run: bundle install
       - run: bundle exec jekyll serve
-      
+      - run: mkdir -p workspace
+      - run: echo "Hello, world" > workspace/echo-output
+
       - persist_to_workspace:
-          root: ./
+          root: workspace
           paths:
-            - _site
+            - echo-output 
 
   deploy:
     machine:
@@ -29,7 +31,7 @@ jobs:
     resource_class: medium
     steps:
        - attach_workspace: 
-          at: ./_site
+          at: workspace
        - add_ssh_keys:
           fingerprints:
             - "e5:63:5b:8f:3b:8d:bb:d1:70:7d:9f:2b:04:14:c5:10"
