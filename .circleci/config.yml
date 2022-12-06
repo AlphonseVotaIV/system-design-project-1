@@ -19,7 +19,7 @@ jobs:
       - run: bundle exec jekyll build
 
       - persist_to_workspace:
-          root: .
+          root: ./
           paths:
             - _site
 
@@ -34,7 +34,7 @@ jobs:
             - "e5:63:5b:8f:3b:8d:bb:d1:70:7d:9f:2b:04:14:c5:10"
        - attach_workspace: 
           at: ./
-       - run: scp -r ~/_site circleci@148.100.77.208:/var/www/mysite
+       - run: scp -r /home/circleci/project/_site circleci@148.100.77.208:/var/www/mysite.com
               
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
