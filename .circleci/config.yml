@@ -30,13 +30,12 @@ jobs:
     steps:
        - attach_workspace: 
           at: ./
-       - run: ls
        - run: ls -lah
        - add_ssh_keys:
           fingerprints:
             - "e5:63:5b:8f:3b:8d:bb:d1:70:7d:9f:2b:04:14:c5:10"
        - run:
-            name: Deploy Over SSH
+            name: Deploy Over SCP
             command: |
               scp -r ~/_site/ circleci@148.100.77.208:"/var/www"
 # Invoke jobs via workflows
